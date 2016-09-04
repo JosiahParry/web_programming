@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head> Linear Regression using sparklyr<meta charset="utf-8"/></head>
+    <aside>
+      <h2> Index </h2>
+        <ul>
+          <li><a href="home.html"> Sparklyr </a></li>
+          <li><a href="linearregression.html"> Linear Regression </a></li>
+          <li><a href="logit.html"> Logistic Regression </a></li>
+          <li><a href="randomforest.html"> Random Forest Decision Tree </a></li>
+          <li><a href="kmeans.html"> K-Means Clustering </a></li>
+        </ul>
+    </aside>
+    
+  <h1>Linear Regression</h1>
+  <body>
+  <p>This will be an example of using Spark's linear regression model on the classic wine quality data set. The code will compare the output from sparklyr and the base R lm() function. This regression will try to predict wine quality based on its pH, alcohol, density, and wine type. </p>
+<pre>
+# Loading local data
+wine <- read.csv("wine_classification.csv")
+# The copy_to function copys the local data frame to a spark data table
+wine_tbl <- copy_to(sc, wine)
+
+# Set a seed
+set.seed(0)
+Let's first create our model using Spark's linear regression.
+
+fit <- wine_tbl %>% ml_linear_regression(response = "quality",
+                                         features = c("pH", "alcohol", "density", "type")) </pre>
+
+    <p>Note that this throws an error <code>"... does not support the StringType type..."</code>. In order to fit the regression model we need to conver type into binary using dummy variable. Since there are only 2 factor levels, we only need 1 dummy variable. I will do this using dplyr and an ifelse statement. </p>
+
+<pre>
+# Note that spark doesn't like strings. I'm converting the quality to a dummy variable where white = 1
+wine_tbl <- wine_tbl %>% mutate(white = ifelse(type == "White", 1, 0)) </pre>
+
+
+    <p>There is now a new variable called white, this will be used in place of type. When white equals 0 the wine is red.</p>
+
+<pre># Creating model using sparklyr with new dummy variable
+fit <- wine_tbl %>% ml_linear_regression(response = "quality",
+                                         features = c("pH", "alcohol", "density", "white")) </pre>
+
+<p> Now that we have created a working linear regression model usin Spark, lets create the same model using the base R function lm(). </p>
+
+<pre>
+# Create lm using base functions
+fit_base <- lm(quality ~ pH + alcohol + density + white, data = wine_tbl) </pre>
+
+  <p>Now its time to compare the output of these models.</p>
+
+<pre>
+#compare models
+summary(fit)
+
+Call:
+quality ~ pH + alcohol + density + white
+
+Residuals:
+     Min       1Q   Median       3Q      Max
+-3.09370 -0.50118  0.02525  0.50473  3.48359
+
+Coefficients:
+               Estimate  Std. Error  t value  Pr(>|t|)
+(Intercept)  30.2243682   5.5927285   5.4042 6.811e-08 ***
+pH           -0.0083494   0.0724080  -0.1153    0.9082
+alcohol      -0.3607972   0.0130215 -27.7077 < 2.2e-16 ***
+density     -22.1625961   5.4908946  -4.0362 5.513e-05 ***
+white        -0.2221567   0.0335749  -6.6168 4.057e-11 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+R-Squared: 0.2119
+Root Mean Squared Error: 0.7732 </pre>
+
+<pre>
+summary(fit_base)
+Call:
+lm(formula = quality ~ pH + alcohol + density + white, data = wine_tbl)
+
+Residuals:
+    Min      1Q  Median      3Q     Max
+-3.0937 -0.5012  0.0253  0.5047  3.4836
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)
+(Intercept)  30.224368   5.592729   5.404 6.81e-08 ***
+pH           -0.008349   0.072408  -0.115    0.908
+alcohol      -0.360797   0.013022 -27.708  < 2e-16 ***
+density     -22.162596   5.490895  -4.036 5.51e-05 ***
+white        -0.222157   0.033575  -6.617 4.06e-11 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.7736 on 4995 degrees of freedom
+Multiple R-squared:  0.2119,    Adjusted R-squared:  0.2113
+F-statistic: 335.8 on 4 and 4995 DF,  p-value: < 2.2e-16 </pre>
+</body>
+</html>

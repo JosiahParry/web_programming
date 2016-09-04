@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+  <html>
+  <head>Logistic Regression using Sparklyr<meta charset="utf-8"/></head>
+  <h2> Index </h2>
+    <ul>
+      <li><a href="home.html"> Sparklyr </a></li>
+      <li><a href="linearregression.html"> Linear Regression </a></li>
+      <li><a href="logit.html"> Logistic Regression </a></li>
+      <li><a href="randomforest.html"> Random Forest Decision Tree </a></li>
+      <li><a href="kmeans.html"> K-Means Clustering </a></li>
+    </ul>
+  <body>
+    <h1>Logistic Regression</h1>
+        <p>For this demonstration I will use the same data set that is used in the <strong>Intro to Credit Risk Modeling in R</strong> from <strong><a href="datacamp.com">DataCamp</a></strong>. The course uses logistic regression to predict default rates. We will create a similar model using the base <code>glm()</code> function, and the MLlib logit model function <code>ml_logistic_regression()</code>.</p>
+
+        <p>The model I will create will predict loan status, based on the loan ammount, age of borrower, and their employment duration. Loan status is binary where <strong>1</strong> is a default and <strong>0</strong> is a non-default.</p>
+
+    <h2> Load dataset and copy to Spark</h2>
+        <p>Now lets load our data:</p>
+<pre><code># load the data
+loan_data <- readRDS("loan_data.rds")
+loan_data_tbl <- copy_to(sc, loan_data) # copying it to spark</code></pre>
+
+<p>Printed are the first 10 rows.</p>
+<pre>
+> glimpse(loan_data_tbl)
+  <code> loan_status loan_amnt int_rate grade emp_length home_ownership annual_inc   age
+         &lt;int&gt;     &lt;int&gt;    &lt;dbl&gt; &lt;chr&gt;      &lt;int&gt;          &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;
+1            0      5000    10.65     B         10           RENT      24000    33
+2            0      2400       NA     C         25           RENT      12252    31
+3            0     10000    13.49     C         13           RENT      49200    24
+4            0      5000       NA     A          3           RENT      36000    39
+5            0      3000       NA     E          9           RENT      48000    24
+6            0     12000    12.69     B         11            OWN      75000    28
+7            1      9000    13.49     C          0           RENT      30000    22
+8            0      3000     9.91     B          3           RENT      15000    22
+9            1     10000    10.65     B          3           RENT     100000    28
+10           0      1000    16.29     D          0           RENT      28000    22</code></pre>
+
+  <h2> Creating Base & MLlib Models </h2>
+<p>Now it is time to create the model using the base function <code>glm()</code>.</p>
+
+<pre><code>base_logit_loan &lt;- glm(loan_status ~ loan_amnt + age + emp_length, family = binomial, data = loan_data_tbl)</code></pre>
+
+<p>That was simple and familiar. Now on to the <em>sparklyr</em> incorporation of MLlib. Now the function <code>ml_logistic_regression()</code> will be used.</p>
+
+<pre><code>spark_logit_loan &lt;- loan_data_tbl %&gt;% ml_logistic_regression(response = &quot;loan_status&quot;, features = c(&quot;loan_amnt&quot;, &quot;age&quot;, &quot;emp_length&quot;))</code></pre>
+
+<p>When trying to create this model there is an error thrown about null values:</p>
+
+<pre><code>Job aborted due to stage failure: Task 1 in stage 9.0 failed 1 times, most recent failure: Lost task 1.0 in stage 9.0 (TID 14, localhost): org.apache.spark.SparkException: Values to assemble cannot be null.</code></pre>
+
+<p>After a bit of playing around with this model and building it from the base up, it turns out that the function just doesn’t seem to like the variable. I then changed the 3rd predictor to be <code>annual_inc</code>. The only difference between these two variables are the type. <code>emp_length</code> is of the class double, whereas <code>annual_inc</code> is of the class integer. I feel as this is a quite cumbersome aspect of <code>ml_logistic_regression()</code> function. Perhaps this points to some other underlying processes of Spark that I am not aware of.</p>
+
+<p>Now I will create another Spark model using <code>annual_inc</code> in the place of <code>emp_length</code>. Because of this, I will create another base model using the same predictors to make sure that we can compare the models.</p>
+
+    <h3>MLib Logistic Regression</h3>
+      <pre><code>spark_logit_ann_inc &lt;- ml_logistic_regression(loan_data_tbl, response = &quot;loan_status&quot;, features = c(&quot;loan_amnt&quot;,&quot;age&quot;, &quot;annual_inc&quot;))</code></pre>
+
+    <h3>Base Logistic Regression</h3>
+        <pre> # Recreate glm() using same predictors as spark logit base_logit_ann_inc &lt;- glm(loan_status ~ loan_amnt + age + annual_inc, family = binomial, data = loan_data_tbl)</code></pre>
+
+    <h2>Model Comparison</h2>
+        <p>Since both models have been created, I would like to compare the outputs of them. Intuitively I use the function <code>summary()</code> to see the outputs of my model.</p>
+
+        <h3>Base Model</h3>
+  <pre><code>&gt; summary(base_logit_ann_inc)
+
+  Call:
+  glm(formula = loan_status ~ loan_amnt + age + annual_inc, family = binomial,
+      data = loan_data_tbl)
+
+  Deviance Residuals:
+      Min       1Q   Median       3Q      Max
+  -0.5702  -0.5119  -0.4855  -0.4413   3.6706
+
+  Coefficients:
+                Estimate Std. Error z value Pr(&gt;|z|)
+  (Intercept) -1.661e+00  9.227e-02 -17.998  &lt; 2e-16 ***
+  loan_amnt    9.025e-06  3.330e-06   2.710  0.00672 **
+  age         -4.717e-03  3.125e-03  -1.510  0.13117
+  annual_inc  -5.991e-06  6.149e-07  -9.743  &lt; 2e-16 ***
+  ---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+  (Dispersion parameter for binomial family taken to be 1)
+
+      Null deviance: 20274  on 29091  degrees of freedom
+  Residual deviance: 20147  on 29088  degrees of freedom
+  AIC: 20155
+
+  Number of Fisher Scoring iterations: 5 </pre>
+
+
+  &gt; summary(spark_logit_ann_inc)
+  Call:
+  loan_status ~ loan_amnt + age + annual_inc
+
+  Coefficients:
+    (Intercept)     loan_amnt           age    annual_inc
+  -1.660598e+00  9.025112e-06 -4.716760e-03 -5.990944e-06 </code></pre>
+
+<h2> Analysis </h3>
+    <p>Immediately there is one key difference. The summary of the spark model only shows us the coefficients! On intitial glance, it looks as if the base function has a more robust output. However on further inspection, the spark model creates an output that holds the features (predictors), response variable, coefficients, ROC, and AUC. The key differences here are that the base model doesn’t calculate ROC, and AUC. Also, in contrast, the Spark model doesn’t create an output for significance levels and measures of deviance; these measures are arguably more important.</p>
+
+</body>
+</html>

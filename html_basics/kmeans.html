@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>K-Means Clustering using MLlib<meta charset="utf-8"/></head>
+  <h2> Index </h2>
+    <ul>
+      <li><a href="home.html"> Sparklyr </a></li>
+      <li><a href="linearregression.html"> Linear Regression </a></li>
+      <li><a href="logit.html"> Logistic Regression </a></li>
+      <li><a href="randomforest.html"> Random Forest Decision Tree </a></li>
+      <li><a href="kmeans.html"> K-Means Clustering </a></li>
+    </ul>
+<body>
+  <h1>K-Means Clustering</h1>
+      <p>Now I will display how to create a k-means clustering algorithm using the same wine data set and the same response, and predictor variables.</p>
+      <p>Since I can’t use the spark tbl for the base model, I will create the same data as a regular dplyr table and create a k-means cluster with three centroids, with a maximum of 10 iterations.</p>
+
+<h2> Creating the models </h2>
+  <h3>Base R K-Means Model</h3>
+      <code>wine &lt;- wine %&gt;% mutate(white = ifelse(type == &quot;White&quot;, 1, 0)) </br>
+        # Create k-means using base </br>
+        base_kmeans &lt;- kmeans(wine[, c(&quot;quality&quot;, &quot;pH&quot;, &quot;alcohol&quot;, &quot;density&quot;, &quot;white&quot;)], 3, iter.max = 10)</code>
+      <p>Now that we have created our base k-mean clusters, lets see how they compare to the Spark k-means function.</p>
+
+  <h3>Sparklyr Model</h3>
+      <pre><code># Create k-means using spark
+spark_kmeans &lt;-  wine_tbl %&gt;% ml_kmeans(centers = 3, iter.max = 10,
+                                 features = c(&quot;quality&quot;, &quot;pH&quot;, &quot;alcohol&quot;, &quot;density&quot;, &quot;white&quot;))</code></pre>
+
+<h2> Comparison</h2>
+    <p>Now that we have our models, lets compare their outputs.</p>
+
+    <h3> Base Model </h3>
+<pre># Time to compare the centers
+# creating data frame from kmeans centers to view
+base_centers &lt;- data.frame(base_kmeans$centers)
+
+# Printing centers of base and spark
+arrange(base_centers, quality)
+
+   quality       pH   alcohol   density     white
+1 3.315789 3.214880 12.313013 0.9925428 0.8713450
+2 4.028708 3.230960 10.757488 0.9949527 0.8337321
+3 4.656820 3.193401  9.447361 0.9974843 0.7810599</pre>
+
+    <h3> Sparklyr Model</h3>
+<pre>
+arrange(spark_kmeans$centers, quality)
+
+   quality       pH   alcohol   density     white
+1 3.325832 3.215063 12.321054 0.9925308 0.8718200
+2 4.007860 3.229656 10.760423 0.9949429 0.8367594
+3 4.660069 3.194576  9.456816 0.9974685 0.7792599</code></pre>
+
+<h3> Analysis </h3>
+    <p>The differences in the centers are quite minimal, perhaps due to randomness or differences in rounding.</p>
+
+</body>
+</html>

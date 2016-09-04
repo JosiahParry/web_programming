@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head> Apache Spark MLlib using Sparklyr <meta charset = "utf-8"/>  </head>
+  <aside>
+    <header>
+      <h2> Index </h2> </header>
+          <ul>
+            <li><a href="home.html"> Sparklyr </a></li>
+            <li><a href="linearregression.html"> Linear Regression </a></li>
+            <li><a href="logit.html"> Logistic Regression </a></li>
+            <li><a href="randomforest.html"> Random Forest Decision Tree </a></li>
+            <li><a href="kmeans.html"> K-Means Clustering </a></li>
+          </ul>
+      </aside>
+<body>
+  <h1> What is Sparklyr & How To Install It</h1>
+    <figure>
+       <img src="http://spark.rstudio.com/images/sparklyr-illustration.png" alt="Infographic of sparklyr. Displays dplyr, ML, and extensions next to eachother, and Apache Spark below it." >
+    </figure>
+
+    <p> In order to install sparklyr and Apache Spark, you will need to run the following code.
+    You will have to use the devtools package to retrieve sparklyr from the <a href="http://rstudio.com">RStudio</a>
+    <a href="http://github.com/rstudio/sparklyr">sparklyr repository</a> on GitHub. You will then use the function <code>spark_install()</code> and provide a character string of the version you wish to install. </p>
+<pre>
+  # Load sparklyr & dplyr
+  devtools::install_github("rstudio/sparklyr")
+  library(sparklyr)
+  library(dplyr)
+
+  # Install spark
+  spark_install(version = "1.6.1")
+  # Connecting to spark using spark_connect, on a local connection.
+  sc <- spark_connect(master = "local")
+</pre>
+
+    <p> This webpage is derived from my GitHub repo <a href="http://www.github.com/josiahparry/sparklyr_exploration"><code>sparklyr_exploration</code></a>. For any questions, or anything else, <a href="mailto:josiah.parry@yahoo.com"> email </a> me. </p>
+
+</body>
+</html>
