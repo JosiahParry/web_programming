@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-  <html>
-  <head>Logistic Regression using Sparklyr<meta charset="utf-8"/></head>
-  <h2> Index </h2>
-    <ul>
-      <li><a href="home.html"> Sparklyr </a></li>
-      <li><a href="linearregression.html"> Linear Regression </a></li>
-      <li><a href="logit.html"> Logistic Regression </a></li>
-      <li><a href="randomforest.html"> Random Forest Decision Tree </a></li>
-      <li><a href="kmeans.html"> K-Means Clustering </a></li>
-    </ul>
-  <body>
+  <html lang="en">
+  <head>
+      <title>Logistic Regression using Sparklyr</title>
+        <meta charset="utf-8"/>
+  </head>
+    <nav>
+      <h2> Index </h2>
+        <ul>
+          <li><a href="home.html"> Sparklyr </a></li>
+          <li><a href="linearregression.html"> Linear Regression </a></li>
+          <li><a href="logit.html"> Logistic Regression </a></li>
+          <li><a href="randomforest.html"> Random Forest Decision Tree </a></li>
+          <li><a href="kmeans.html"> K-Means Clustering </a></li>
+        </ul>
+      </nav>
+<body>
     <h1>Logistic Regression</h1>
         <p>For this demonstration I will use the same data set that is used in the <strong>Intro to Credit Risk Modeling in R</strong> from <strong><a href="datacamp.com">DataCamp</a></strong>. The course uses logistic regression to predict default rates. We will create a similar model using the base <code>glm()</code> function, and the MLlib logit model function <code>ml_logistic_regression()</code>.</p>
 
@@ -58,13 +63,13 @@ loan_data_tbl <- copy_to(sc, loan_data) # copying it to spark</code></pre>
       <pre><code>spark_logit_ann_inc &lt;- ml_logistic_regression(loan_data_tbl, response = &quot;loan_status&quot;, features = c(&quot;loan_amnt&quot;,&quot;age&quot;, &quot;annual_inc&quot;))</code></pre>
 
     <h3>Base Logistic Regression</h3>
-        <pre> # Recreate glm() using same predictors as spark logit base_logit_ann_inc &lt;- glm(loan_status ~ loan_amnt + age + annual_inc, family = binomial, data = loan_data_tbl)</code></pre>
+        <pre> # Recreate glm() using same predictors as spark logit base_logit_ann_inc &lt;- glm(loan_status ~ loan_amnt + age + annual_inc, family = binomial, data = loan_data_tbl)</pre>
 
     <h2>Model Comparison</h2>
         <p>Since both models have been created, I would like to compare the outputs of them. Intuitively I use the function <code>summary()</code> to see the outputs of my model.</p>
 
         <h3>Base Model</h3>
-  <pre><code>&gt; summary(base_logit_ann_inc)
+  <pre>&gt; summary(base_logit_ann_inc)
 
   Call:
   glm(formula = loan_status ~ loan_amnt + age + annual_inc, family = binomial,
@@ -91,16 +96,16 @@ loan_data_tbl <- copy_to(sc, loan_data) # copying it to spark</code></pre>
 
   Number of Fisher Scoring iterations: 5 </pre>
 
-
+<pre>
   &gt; summary(spark_logit_ann_inc)
   Call:
   loan_status ~ loan_amnt + age + annual_inc
 
   Coefficients:
     (Intercept)     loan_amnt           age    annual_inc
-  -1.660598e+00  9.025112e-06 -4.716760e-03 -5.990944e-06 </code></pre>
+  -1.660598e+00  9.025112e-06 -4.716760e-03 -5.990944e-06</pre>
 
-<h2> Analysis </h3>
+<h2> Analysis </h2>
     <p>Immediately there is one key difference. The summary of the spark model only shows us the coefficients! On intitial glance, it looks as if the base function has a more robust output. However on further inspection, the spark model creates an output that holds the features (predictors), response variable, coefficients, ROC, and AUC. The key differences here are that the base model doesn’t calculate ROC, and AUC. Also, in contrast, the Spark model doesn’t create an output for significance levels and measures of deviance; these measures are arguably more important.</p>
 
 </body>

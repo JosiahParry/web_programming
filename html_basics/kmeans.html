@@ -21,8 +21,8 @@
 
 <h2> Creating the models </h2>
   <h3>Base R K-Means Model</h3>
-      <code>wine &lt;- wine %&gt;% mutate(white = ifelse(type == &quot;White&quot;, 1, 0)) </br>
-        # Create k-means using base </br>
+      <code>wine &lt;- wine %&gt;% mutate(white = ifelse(type == &quot;White&quot;, 1, 0)) <br>
+        # Create k-means using base <br>
         base_kmeans &lt;- kmeans(wine[, c(&quot;quality&quot;, &quot;pH&quot;, &quot;alcohol&quot;, &quot;density&quot;, &quot;white&quot;)], 3, iter.max = 10)</code>
       <p>Now that we have created our base k-mean clusters, lets see how they compare to the Spark k-means function.</p>
 
@@ -54,7 +54,7 @@ arrange(spark_kmeans$centers, quality)
    quality       pH   alcohol   density     white
 1 3.325832 3.215063 12.321054 0.9925308 0.8718200
 2 4.007860 3.229656 10.760423 0.9949429 0.8367594
-3 4.660069 3.194576  9.456816 0.9974685 0.7792599</code></pre>
+3 4.660069 3.194576  9.456816 0.9974685 0.7792599</pre>
 
 <h3> Analysis </h3>
     <p>The differences in the centers are quite minimal, perhaps due to randomness or differences in rounding.</p>
