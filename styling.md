@@ -1,7 +1,7 @@
 ##CSS: cascading style sheets
 
 - You can use inline styling (nono).
-- Use <em> and <strong>, not <b> or <i>
+- Use  `<em>` and `<strong>`, not `<b>` or `<i>`
 - Font can be added as an attribute to the html doc
   - Don't do this. Use CSS. This is not **semantic**
 
