@@ -116,3 +116,34 @@ We can use `div` etc. for layout, and CSS
 ### New CSS 3 features
 - Rounded corners, opacity, color gradients, shadows, animations, transformations (rotation, skew, etc).
 - `nth-child`, allows you to target every **nth** element. i.e. I want to target every other row.
+
+## Body styles
+
+Body styles cascade through the entire document. Semantically, the body should contain everything that will be visible on the page, using the `<body>` tag in your HTML.
+
+When styles conflict, the latter one overrides.
+
+```
+body {
+  font-size: 16px;
+  background-color: yellow;
+}
+```
+
+## CSS classes
+
+Can create ID's with the `id` attribute within an HTML tag. IDs can be targeted using the `#`.
+  - i.e. `#id`
+
+Can create classes within HTML by using the `class` attribute within a tag. Classes are assigned like: `<h2 class="urgent">Title_2</h2>`.
+
+Classes are targeted within CSS by placing a period before the class name.
+```
+.class_name {
+  font-family: sans-serif;
+}
+```
+You can assign multiple classes by separating class names with a space.
+  - `<h2 class="class_1 class_2"> Title 2 </h>`
+
+*IDs* should be used to identify a single tag or item etc., whereas *classes* should be used to target a group of items.
