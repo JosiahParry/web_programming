@@ -24,7 +24,7 @@ body {
   font-size: 11px;
   background-color: white;
   background-image: url(silverware.jpg);
-  background-repeat: repeat-x repeat-y;
+  background-repeat: repeat-x, repeat-y;
   background-attachment: fixed;
 }
 
