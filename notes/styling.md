@@ -1,4 +1,4 @@
-##CSS: cascading style sheets
+# CSS: cascading style sheets
 
 - You can use inline styling (nono).
 - Use  `<em>` and `<strong>`, not `<b>` or `<i>`
@@ -147,3 +147,22 @@ You can assign multiple classes by separating class names with a space.
   - `<h2 class="class_1 class_2"> Title 2 </h>`
 
 *IDs* should be used to identify a single tag or item etc., whereas *classes* should be used to target a group of items.
+
+## Positioning
+
+- `position`:
+  - `static`
+  - `relative` offset from its normal static position
+  - `absolute`: a fixed position within it's containing element
+  - `fixed`: a fixed position within the browser window
+
+Ex:
+```
+#menubar {
+  position: absolute;
+  left: 400px
+  top: 50px;
+}
+```
+
+Layout an element using *alignment* if possible. `text-align` and `vertical-align` is used for block level elements.
