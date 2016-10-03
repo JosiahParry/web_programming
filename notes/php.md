@@ -65,3 +65,9 @@ echo "Today is your {$age}th birthday.\n";
 #### vardump
 vardump is a function:
 `vardump($variable);`
+
+**PHP expression blocks**
+```
+<?= expression ?>
+```
+The equals is mandatory
