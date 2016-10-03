@@ -1,0 +1,146 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-image: url("supplement/background.png");
+}
+
+.banner {
+  text-align: center;
+  background-image: url("supplement/bannerbg.png");
+  background-repeat: repeat-x;
+  background-size: 50px 50px;
+  height: 50px;
+
+}
+
+#bannerimg {
+  height: 50px;
+}
+
+#movie_title {
+  font-family: Tahoma, Veranda, sans-serif;
+  font-size: 24pt;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 3px 3px #999999;
+}
+
+#rotten_rating  {
+  background-image: url(supplement/rbg.png);
+  background-size: 50px 83px;
+  background-repeat: repeat-x;
+  color: red;
+  font-size: 48pt;
+  font-weight: bold;
+  vertical-align: bottom;
+  height: 83px;
+  margin-bottom: 20px;
+}
+
+#rotten_rating #value {
+  vertical-align: top;
+}
+
+
+
+#reviews {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+#index {
+  background-color: #A2B964;
+  text-align:center;
+  width: 800px;
+  vertical-align: bottom;
+  clear:right;
+  position: static;
+  padding: 5px;
+}
+
+
+#reviews .review {
+  font-weight: bold;
+  font-size: 8pt;
+  display: block;
+  background-color: #E8DC9B;
+  border-style: solid;
+  border-color: grey;
+  border-width: 2px;
+  border-radius: 10px;
+  padding: 8px;
+  overflow: auto;
+}
+
+#reviews .author {
+  font-style: italic;
+}
+
+
+#reviews img {
+  vertical-align: top;
+  overflow: auto;
+}
+
+#reviews .author img {
+  float: left;
+  padding-right: 5px;
+}
+
+#reviews .review img {
+  float: left;
+  padding-right: 5px;
+}
+
+
+#overview {
+  text-align: right;
+  margin-left: 2%;
+  width: 250px;
+  float: right;
+  position: relative;
+  background-color: #A2B964;
+  text-align: left;
+
+}
+
+#overview dl {
+  padding-left: 10pt;
+  font-family: "Arial", "sans-serif";
+  font-size: 8pt;
+}
+
+#overview dt {
+  font-weight: bold;
+  padding-top: 10pt;
+}
+
+#overview ul {
+  list-style-type: none;
+  text-align: left;
+
+}
+
+
+
+#content {
+position: relative;
+margin: auto;
+width: 800px;
+border-style: solid;
+border-radius: 20px;
+border-width: 4px;
+border-color: gray;
+overflow: hidden;
+}
+
+#validators img {
+  opacity: .5;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+}
