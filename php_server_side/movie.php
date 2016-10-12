@@ -25,7 +25,7 @@
 		<div id="content">
 			<div id="overview">
 				<div>
-					<img src=<?php file("moviefiles/$movie/overview.png")?> 
+					<img src=<?php file("moviefiles/$movie/overview.png")?>
 							 alt="general overview" />
 				</div>
 
@@ -73,7 +73,7 @@
 
 			<div id="reviews">
 				<div id="reviews-header">
-					<img src="rottenbig.png" alt="Rotten" /> <?php $rating ?>
+					<?php <img src="rottenbig.png" alt="Rotten" />  $rating ?>
 				</div>
 
 				<div class="reviews-column">
