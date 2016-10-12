@@ -3,7 +3,7 @@
 The **ID** attribute and **classes** will be integral. The use of IDs can be used to link to a part of a page using the anchor tag: `<a href=#goHere>stuff</a>`.
 
 #### IDs selections
-```
+```css
 #goHere {
   font-stye: italic;
   font-family: Garamond, serif;
@@ -92,4 +92,4 @@ p {
 
 **float** property:
 a floating element is removed from normal document flow, underlying text wraps around it as necessary.
-It floated out of the containing element. 
+It floated out of the containing element.

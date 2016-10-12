@@ -70,4 +70,37 @@ vardump is a function:
 ```
 <?= expression ?>
 ```
-The equals is mandatory
+The equals is mandatory.
+
+`$_REQUEST["param name"]`: returns a parameter's value as a string.
+
+## Functions:
+
+```
+function name(paramerterName, ..., paramName) {
+  statements;
+  return paramName;
+}
+```
+
+Best to define functions at the top of a page to be neat.
+
+Can set a variable to a function:  `$var = function name(param, param) {statement}`
+
+
+Functions for file input:
+  - `file, file_get_content, file_put_contents`: reading/writing entire files
+
+
+List:
+`list($var1, ..., $varN) = array;`
+i.e.
+
+`list($name, $phone, $ssn) = file("personal.txt")`
+
+
+Reading in directories:
+
+`scandir`: returns an array of all file names in a given directory.
+`glob`: (global) returns an array of all file names that match a given pattern
+  - i.e. "foo/bar/myfile.txt"

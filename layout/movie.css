@@ -118,13 +118,15 @@ body {
   padding-top: 10pt;
 }
 
+#overview dl dt:first-child {
+  padding-top: 0pt;
+}
+
 #overview ul {
   list-style-type: none;
   text-align: left;
-
+  padding: 0pt;
 }
-
-
 
 #content {
 position: relative;
@@ -137,10 +139,11 @@ border-color: gray;
 overflow: hidden;
 }
 
-#validators img {
+#validators {
   opacity: .5;
   position: fixed;
-  bottom: 0;
-  right: 0;
+  bottom: 0pt;
+  right: 0pt;
+  display: inline-block;
 
 }
