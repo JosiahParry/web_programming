@@ -2,15 +2,13 @@
 <html>
 <?php
 	#$movie = _GET["film"];
-	$info = file('moviefiles/'$movie.'/info.txt');
+	$info = file(moviefiles/$movie./info.txt);
 	list($title, $year, $rating) = $info;
 ?>
 
 
-
-
 	<head>
-		<title><?php $title ?> - Rancid Tomatoes</title>
+		<title>Rancid Tomatoes</title>
 		<link rel="icon" href="rotten.gif" />
 		<meta charset="utf-8" />
 		<link href="movie.css" type="text/css" rel="stylesheet" />
@@ -22,7 +20,7 @@
 		</div>
 
 		<h1>
-			<?php echo $title." "."("$year")"</h1>
+			<?php echo $title ($year)</h1>
 
 		<div id="content">
 			<div id="overview">
