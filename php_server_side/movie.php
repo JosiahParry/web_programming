@@ -73,7 +73,17 @@
 
 			<div id="reviews">
 				<div id="reviews-header">
-					<img src="rottenbig.png" alt="Rotten" /> <?php echo "$rating%"?>
+					<img <?php
+									if ($rating >= 60) {
+										src="freshbig.png";
+										alt="Fresh";
+									} else {
+										src="rottenbig.png";
+										alt="Rotten";
+									}
+					 			?>
+					 		 /> 
+					<?php echo "$rating%"?>
 				</div>
 
 				<div class="reviews-column">
