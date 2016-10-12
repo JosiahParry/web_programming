@@ -73,7 +73,7 @@
 
 			<div id="reviews">
 				<div id="reviews-header">
-					<img src="rottenbig.png" alt="Rotten" /> <?php "$rating" ?>
+					<img src="rottenbig.png" alt="Rotten" /> <?php echo $rating ?>
 				</div>
 
 				<div class="reviews-column">
