@@ -74,7 +74,7 @@
 			<div id="reviews">
 				<div id="reviews-header">
 					<?php
-								if ($rating >= 60) {
+								if ($rating >= "60") {
 									<img src="freshbig.png"
 										alt="Fresh" />
 									} else {
