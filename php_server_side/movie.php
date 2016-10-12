@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php
-	#$movie = _GET["film"];
+	$movie = _GET["film"];
 	$info = file(moviefiles/$movie/info.txt);
 	list($title, $year, $rating) = $info;
 ?>
@@ -20,7 +20,7 @@
 		</div>
 
 		<h1>
-			<?php echo $title ($year)</h1>
+			<?php echo $title ($year) ?> </h1>
 
 		<div id="content">
 			<div id="overview">
