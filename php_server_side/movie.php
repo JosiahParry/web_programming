@@ -20,12 +20,13 @@
 		</div>
 
 		<h1>
-			<?php echo "$title $year" ?> </h1>
+			<?php echo "$title ($year)" ?> </h1>
 
 		<div id="content">
 			<div id="overview">
 				<div>
-					<img src="overview.png" alt="general overview" />
+					<img src=<?php file("moviefiles/$movie/overview.png")?> 
+							 alt="general overview" />
 				</div>
 
 				<dl>
@@ -72,7 +73,7 @@
 
 			<div id="reviews">
 				<div id="reviews-header">
-					<img src="rottenbig.png" alt="Rotten" />33%
+					<img src="rottenbig.png" alt="Rotten" /> <?php $rating ?>
 				</div>
 
 				<div class="reviews-column">
