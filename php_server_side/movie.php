@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php
-	$movie = $_GET["film"];
+	$movie = $_GET['film'];
 	$info = file(moviefiles/$movie/info.txt);
 	list($title, $year, $rating) = $info;
 ?>
