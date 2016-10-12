@@ -20,7 +20,7 @@
 		</div>
 
 		<h1>
-			<?php echo "$title ($year)" ?> </h1>
+			<?php echo "$title (trim($year))" ?> </h1>
 
 		<div id="content">
 			<div id="overview">
@@ -76,10 +76,10 @@
 					<?php
 								if ($rating >= "60") {
 									echo "<img src='freshbig.png'
-										alt='Fresh' />";
+										alt='Fresh'/>";
 									} else {
 									echo "<img src='rottenbig.png'
-										alt='Rotten' />";
+										alt='Rotten'/>";
 									}
 					 			?>
 					 		 />
