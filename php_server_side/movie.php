@@ -75,11 +75,11 @@
 				<div id="reviews-header">
 					<?php
 								if ($rating >= "60") {
-									echo "<img src="freshbig.png"
-										alt="Fresh" />"
+									echo "<img src='freshbig.png'
+										alt='Fresh' />"
 									} else {
-									echo "<img src="rottenbig.png"
-										alt="Rotten" />"
+									echo "<img src='rottenbig.png'
+										alt='Rotten' />"
 									}
 					 			?>
 					 		 />
