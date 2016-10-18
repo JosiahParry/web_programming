@@ -88,11 +88,10 @@
 				<p>
 					<?php
 					$overview = file("moviefiles/$movie/overview.txt");
-						print_r(foreach ($overview as $var) {
-							explode(",", implode($overview));
-						})
-					;
-					print_r(explode(PHP_EOL,implode($overview)));
+					$overview_items = explode(PHP_EOL,implode($overview));
+					foreach ($overview_items as $overview_items) {
+						print_r(implode($overview_items))
+					}
 
 			 			?>
 				</p>
