@@ -87,8 +87,8 @@
 
 				<p>
 					<?php
-					$var = array("Hi: josiah");
-					print_r(explode(":", implode($var)));
+					$overview = file("moviefiles/$movie/overview.txt");
+					print_r(explode(":", implode($overview)));
 
 			 			?>
 				</p>
