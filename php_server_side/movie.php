@@ -25,7 +25,7 @@
 		<div id="content">
 			<div id="overview">
 				<div>
-					<img src=<?php file("moviefiles/".$movie."/overview.png")?>
+					<img src=<?php  echo "moviefiles/$movie/overview.png"?>
 							 alt="general overview" />
 				</div>
 
