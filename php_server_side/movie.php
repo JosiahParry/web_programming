@@ -87,7 +87,7 @@
 
 				<p> Test
 					<?php
-					$var = explode(":", "moviefiles/$movie/overview.txt");
+					$var = explode(":", "moviefiles/tmnt/overview.txt");
 						foreach ($var as $var) {
 							echo '<p>'.$var.'</p>';
 						}
