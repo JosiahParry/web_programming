@@ -20,7 +20,7 @@
 		</div>
 
 		<h1>
-			<?php echo "$title ($year)" ?> </h1>
+			<?php echo "$title" trim($year) ?> </h1>
 
 		<div id="content">
 			<div id="overview">
