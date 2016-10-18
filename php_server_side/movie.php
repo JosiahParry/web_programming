@@ -88,7 +88,7 @@
 				<p>
 					<?php
 					$var = array("Hi: josiah");
-					print_r(explode(":", $var));
+					print_r(explode(":", implode($var)));
 
 			 			?>
 				</p>
