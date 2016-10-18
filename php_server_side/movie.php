@@ -88,12 +88,25 @@
 				<p>
 					<?php
 					$overview = file("moviefiles/$movie/overview.txt");
-					$overview_items = explode(PHP_EOL,implode($overview));
-					foreach ($overview_items as $overview_items) {
-						print_r(implode($overview_items))
+					$overview_items = explode(PHP_EOL, implode($overview));
+					/*print_r(implode($overview_items));
+					print_r(explode(":", $overview_items[0]));
+*/
+	/*				$var = explode(":", $overview_items);*/
+
+					foreach ($overview_items as $key => $data) {
+						$overview_items[$key] = explode(",", $data);
 					}
 
-			 			?>
+					foreach ($overview_items as $key => $data) {
+						$overview_items[$key] = explode(":", implode($data));
+					}
+
+					print_r($overview_items);
+
+					echo "$overview_items[0]";
+
+						?>
 				</p>
 
 				<div class="reviews-column">
