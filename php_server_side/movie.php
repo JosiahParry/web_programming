@@ -20,7 +20,7 @@
 		</div>
 
 		<h1>
-			<?php echo $title . trim(($year)); ?> </h1>
+			<?php echo $title . .'('trim($year).')'; ?> </h1>
 
 		<div id="content">
 			<div id="overview">
@@ -82,8 +82,7 @@
 										alt='Rotten'/>";
 									}
 					 			?>
-					 		 />
-					<?php echo "$rating%"?>
+					<?php echo "$rating"?>
 				</div>
 
 				<div class="reviews-column">
