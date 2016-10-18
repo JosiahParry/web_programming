@@ -87,7 +87,7 @@
 
 				<p> Test
 					<?php
-					$var = explode(":", "moviefiles/$movie/review1.txt");
+					$var = explode(":", "moviefiles/$movie/overview.txt");
 					echo $var ?>
 				</p>
 
