@@ -85,11 +85,13 @@
 					<?php echo "$rating%"?>
 				</div>
 
+				<p> Test
+					<?php
+					echo explode(":", file("moviefiles/$movie/review1.txt")) ?>
+				</p>
+
 				<div class="reviews-column">
-					<p> Test
-						echo explode(":", file("moviefiles/$movie/review1.txt"))
-					
-					</p>
+
 					<p>
 						<img src="rotten.gif" alt="Rotten" />
 						<q>Ditching the cheeky, self-aware wink that helped to excuse the concept's inherent corniness, the movie attempts to look polished and 'cool,' but the been-there animation can't compete with the then-cutting-edge puppetry of the 1990 live-action movie.</q>
