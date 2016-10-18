@@ -88,7 +88,7 @@
 				<p>
 					<?php
 					$overview = file("moviefiles/$movie/overview.txt");
-					print_r($overview);
+					print_r(explode(":",implode($overview)));
 
 			 			?>
 				</p>
