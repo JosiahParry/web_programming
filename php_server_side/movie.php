@@ -85,15 +85,12 @@
 					<?php echo "$rating%"?>
 				</div>
 
-				<p> Test
+				<p>
 					<?php
-					$var = explode(":", "moviefiles/tmnt/overview.txt");
-						foreach ($var as $var) {
-							echo '<p>'.$var.'</p>';
-						}
+					$var = array("Hi: josiah");
+					echo explode(":", $var);
 
-
-					echo serialize($var); ?>
+			 			?>
 				</p>
 
 				<div class="reviews-column">
