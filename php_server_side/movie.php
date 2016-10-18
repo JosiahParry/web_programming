@@ -16,11 +16,11 @@
 
 	<body>
 		<div id="image-banner">
-			<img src="banner.png" alt="Rancid Tomatoes" />
+			<img src="hw3-completed/banner.png" alt="Rancid Tomatoes" />
 		</div>
 
 		<h1>
-			<?php echo $title . trim($year); ?> </h1>
+			<?php echo $title . trim(($year)); ?> </h1>
 
 		<div id="content">
 			<div id="overview">
