@@ -89,7 +89,7 @@
 					<?php
 					$var = explode(":", "moviefiles/$movie/overview.txt");
 						foreach ($var as $var) {
-							echo '<p>' $var, '</p>';
+							echo '<p>'.$var.'</p>';
 						}
 
 
