@@ -88,11 +88,11 @@
 				<p> Test
 					<?php
 					$var = explode(":", "moviefiles/$movie/overview.txt");
-						foreach ($var as $item) {
-							echo '<p>' $item, '</p>',
+						foreach ($var as $var) {
+							echo '<p>' $var, '</p>';
 						}
 
-		
+
 					echo serialize($var); ?>
 				</p>
 
