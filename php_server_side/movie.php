@@ -87,7 +87,8 @@
 
 				<p> Test
 					<?php
-					print_r explode(":", "moviefiles/$movie/review1.txt"); ?>
+					$var = explode(":", "moviefiles/$movie/review1.txt");
+					echo $var ?>
 				</p>
 
 				<div class="reviews-column">
