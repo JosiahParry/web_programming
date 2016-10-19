@@ -49,11 +49,7 @@
 					}
 
 					foreach ($overview_items as $item){
-						if ($index = 0){
-							echo "<dt>$item</dt>";
-					} else {
-						echo "<dd>$item</dd>";
-					}
+						echo "<p> $item </p>";
 				}
 					print_r($overview_items);
 
