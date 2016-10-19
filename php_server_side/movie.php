@@ -126,7 +126,8 @@
 								<p>$author <br />
 								<em>$org</em>
 								</p>";
-							if (!file_exists("moviefiles/$movie/review{$i}.txt") {
+
+							if (file_exists($moviefiles/$movie/review{$i}.txt) {
 								break;
 							}
 						}
