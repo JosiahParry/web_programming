@@ -112,7 +112,8 @@
 				<div class="reviews-column">
 
 					<?php
-						for ($i = 1; $i <= 10; $i++) {
+						$files_rev = glob("movefiles/$movie/review*.txt");
+						foreach ($files_rev as $revs) {
 							$review_full = file("moviefiles/$movie/review{$i}.txt");
 							list($review, $rev_rating, $author, $org) = $review_full;
 							echo "<p>";
@@ -126,10 +127,6 @@
 								<p>$author <br />
 								<em>$org</em>
 								</p>";
-
-								if (!file_exists('moviefiles/'.$movie.'/review'.{$i}'.txt') {
-									break;
-							}
 						}
 					?>
 
