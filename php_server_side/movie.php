@@ -45,7 +45,7 @@
 							$overview_items[$key] = explode(":", implode($data));
 							if ($index == 1){
 
-							echo "<dd>$data</dd>"
+							echo "<dd>$data</dd>";
 
 						}
 					}
