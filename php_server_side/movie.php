@@ -112,12 +112,11 @@
 				<div class="reviews-column">
 
 					<?php
-						$files_rev = glob("movefiles/$movie/review*.txt");
-						foreach ($files_rev as $revs) {
-							$review_full = $revs;
+						for ($i = 1; $i <= 10; $i++) {
+							$review_full = file("moviefiles/$movie/review{$i}.txt");
 							list($review, $rev_rating, $author, $org) = $review_full;
 							echo "<p>";
-								if ($rev_rating = "ROTTEN") {
+								if ($rev_rating = "ROTTEN"){
 									echo "<img src='hw3-completed/fresh.gif' alt='Rotten' />";
 								} elseif ($rev_rating = "FRESH"){
 									echo "<img src='hw3-completed/fresh.gif' alt='FRESH' />";
@@ -127,6 +126,8 @@
 								<p>$author <br />
 								<em>$org</em>
 								</p>";
+
+						
 						}
 					?>
 
