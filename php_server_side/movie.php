@@ -114,7 +114,9 @@
 					<?php
 
 							$review_full = file("moviefiles/$movie/review1.txt");
-							list($review, $rev_rating, $author, $org);
+							list($review, $rev_rating, $author, $org) = $review_full;
+
+							echo "<p> $review </p>"
 					?>
 
 
