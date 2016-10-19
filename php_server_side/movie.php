@@ -110,17 +110,13 @@
 				</p>
 
 				<div class="reviews-column">
-						<p>
+
 					<?php
 
 							$review_full = file("moviefiles/$movie/review1.txt");
 							list($review, $rev_rating, $author, $org);
-
-							 echo "$review";
-
-
 					?>
-					</>
+
 
 					<p>
 						<img src="rotten.gif" alt="Rotten" />
