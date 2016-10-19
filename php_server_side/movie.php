@@ -127,8 +127,8 @@
 								<em>$org</em>
 								</p>";
 
-							if (file_exists($moviefiles/$movie/review{$i}.txt) {
-								break;
+								if (!file_exists('moviefiles/'.$movie.'/review'.{$i}'.txt') {
+									break;
 							}
 						}
 					?>
