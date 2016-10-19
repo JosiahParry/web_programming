@@ -6,7 +6,6 @@
 	list($title, $year, $rating) = $info;
 ?>
 
-/* this is my first time coding like this # sorry */ 
 	<head>
 		<title>Rancid Tomatoes</title>
 		<link rel="icon" href="rotten.gif" />
@@ -33,10 +32,6 @@
 					<?php
 					$overview = file("moviefiles/$movie/overview.txt");
 					$overview_items = explode(PHP_EOL, implode($overview));
-					/*print_r(implode($overview_items));
-					print_r(explode(":", $overview_items[0]));
-	*/
-	/*				$var = explode(":", $overview_items);*/
 
 					foreach ($overview_items as $key => $data) {
 						$overview_items[$key] = explode(",", $data);
@@ -46,51 +41,17 @@
 						$overview_items[$key] = explode(":", implode($data));
 
 					}
+					?>
 
-					print_r($overview_items);
+				<dl> <?php
+					foreach ($overview_items as $arr) {
+						echo "<dt>$arr[0]</dt>
+						<dd>$arr[1]</dt>";
+					}
+?> </dl>
 
 
-						?>
-				<dl>
-					<dt>STARRING</dt>
-					<dd>Patrick Stewart <br /> Mako <br /> Sarah Michelle Gellar <br /> Kevin Smith</dd>
 
-					<dt>DIRECTOR</dt>
-					<dd>Kevin Munroe</dd>
-
-					<dt>RATING</dt>
-					<dd>PG</dd>
-
-					<dt>THEATRICAL RELEASE</dt>
-					<dd>Mar 23, 2007</dd>
-
-					<dt>MOVIE SYNOPSIS</dt>
-					<dd>After the defeat of their old arch nemesis, The Shredder, the Turtles have grown apart as a family.</dd>
-
-					<dt>MPAA RATING</dt>
-					<dd>PG, for animated action violence, some scary cartoon images and mild language</dd>
-
-					<dt>RELEASE COMPANY</dt>
-					<dd>Warner Bros.</dd>
-
-					<dt>RUNTIME</dt>
-					<dd>90 mins</dd>
-
-					<dt>GENRE</dt>
-					<dd>Action/Adventure, Comedies, Childrens, Martial Arts, Superheroes, Ninjas, Animated Characters</dd>
-
-					<dt>BOX OFFICE</dt>
-					<dd>$54,132,596</dd>
-
-					<dt>LINKS</dt>
-					<dd>
-						<ul>
-							<li><a href="http://www.ninjaturtles.com/">The Official TMNT Site</a></li>
-							<li><a href="http://www.rottentomatoes.com/m/teenage_mutant_ninja_turtles/">RT Review</a></li>
-							<li><a href="http://www.rottentomatoes.com/">RT Home</a></li>
-						</ul>
-					</dd>
-				</dl>
 			</div>
 
 			<div id="reviews">
@@ -108,29 +69,68 @@
 				</div>
 				</p>
 
-				<div class="reviews-column">
+		<!--	<div class="reviews-column"> -->
 
 					<?php
 						$len = count(glob("moviefiles/$movie/review*.txt"));
-						for ($i = 1; $i <= 10; $i++) {
-							$review_full = file("moviefiles/$movie/review{$i}.txt");
-							list($review, $rev_rating, $author, $org) = $review_full;
+						$revs = glob("moviefiles/$movie/review*.txt");
+
+						/*foreach ($revs as $rev) {
+							$rev1 = file($rev, FILE_IGNORE_NEW_LINES);
+							list($review, $rev_rating, $author, $org) = $rev1;
 							echo "<p>";
-								if ($rev_rating = "ROTTEN"){
-									echo "<img src='hw3-completed/fresh.gif' alt='Rotten' />";
-								} elseif ($rev_rating = "FRESH"){
-									echo "<img src='hw3-completed/fresh.gif' alt='FRESH' />";
+								if ($rev_rating == "ROTTEN") {
+									echo "<img src='hw3-completed/rotten.gif' alt='Rotten' />";
+								} else {
+									echo "<img src='hw3-completed/fresh.gif' alt='Fresh' />";
 								}
-							echo "
-								<q>$review</q></p>
-								<p>$author <br />
-								<em>$org</em>
-								</p>";
-
-
-						}
+							echo "<q>$review</q></p>
+										<p>$author <br />
+										<em>$org</em>
+										</p>";
+						} */
 					?>
+				<!--</div>-->
+
+				<div class="reviews-column">
+					<?php for($i = 0; $i <= floor($len/2); $i++) {
+
+
+						$rev1 = file($revs[$i], FILE_IGNORE_NEW_LINES);
+						list($review, $rev_rating, $author, $org) = $rev1;
+						echo "<p>";
+							if ($rev_rating == "ROTTEN") {
+								echo "<img src='hw3-completed/rotten.gif' alt='Rotten' />";
+							} else {
+								echo "<img src='hw3-completed/fresh.gif' alt='Fresh' />";
+							}
+						echo "<q>$review</q></p>
+									<p>$author <br />
+									<em>$org</em>
+									</p>";
+					} ?>
 				</div>
+
+				<div class="reviews-column">
+					<?php for($i = floor(($len/2) + 1); $i <= $len -1; $i++) {
+
+
+						$rev1 = file($revs[$i], FILE_IGNORE_NEW_LINES);
+						list($review, $rev_rating, $author, $org) = $rev1;
+						echo "<p>";
+							if ($rev_rating == "ROTTEN") {
+								echo "<img src='hw3-completed/rotten.gif' alt='Rotten' />";
+							} else {
+								echo "<img src='hw3-completed/fresh.gif' alt='Fresh' />";
+							}
+						echo "<q>$review</q></p>
+									<p>$author <br />
+									<em>$org</em>
+									</p>";
+					} ?>
+				</div>
+
+
 			</div>
 
 			<p id="content-footer">(1-10) of 88</p>
