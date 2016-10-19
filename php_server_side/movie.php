@@ -112,7 +112,7 @@
 				<div class="reviews-column">
 
 					<?php
-						for ($i = 1, $i <= 10; $i++) {
+						for ($i = 1; $i <= 10; $i++) {
 							$review_full = file("moviefiles/$movie/review{$i}.txt");
 							list($review, $rev_rating, $author, $org) = $review_full;
 							echo "
