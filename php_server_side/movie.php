@@ -40,7 +40,6 @@
 
 					foreach ($overview_items as $key => $data) {
 						$overview_items[$key] = explode(",", $data);
-				
 					}
 
 					foreach ($overview_items as $key => $data) {
