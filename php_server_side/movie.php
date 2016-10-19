@@ -6,7 +6,7 @@
 	list($title, $year, $rating) = $info;
 ?>
 
-
+/* this is my first time coding like this # sorry */ 
 	<head>
 		<title>Rancid Tomatoes</title>
 		<link rel="icon" href="rotten.gif" />
