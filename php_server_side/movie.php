@@ -39,18 +39,14 @@
 
 					foreach ($overview_items as $key => $data) {
 						$overview_items[$key] = explode(",", $data);
-					$index = 1;
 
-						foreach ($overview_items as $key => $data) {
-							$overview_items[$key] = explode(":", implode($data));
-							if ($index == 1){
-
-							echo "<dd>$data</dd>";
-
-						}
+	
 					}
 
+					foreach ($overview_items as $key => $data) {
+						$overview_items[$key] = explode(":", implode($data));
 
+					}
 
 					print_r($overview_items);
 
