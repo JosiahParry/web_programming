@@ -105,7 +105,6 @@
 
 					print_r($overview_items);
 
-					echo "$overview_items[0]";
 
 						?>
 				</p>
