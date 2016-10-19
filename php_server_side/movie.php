@@ -49,7 +49,7 @@
 					}
 
 					foreach ($overview_items as $item){
-						echo "<p> $item </p>";
+						echo "<p> implode($item) </p>";
 				}
 					print_r($overview_items);
 
