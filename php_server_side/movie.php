@@ -111,6 +111,17 @@
 
 				<div class="reviews-column">
 
+					<?php
+
+							$review_full = file("moviefiles/$movie/review1.txt");
+							list($review, $rev_rating, $author, $org)
+
+							<p> echo "$review"</p>
+
+
+					?>
+
+
 					<p>
 						<img src="rotten.gif" alt="Rotten" />
 						<q>Ditching the cheeky, self-aware wink that helped to excuse the concept's inherent corniness, the movie attempts to look polished and 'cool,' but the been-there animation can't compete with the then-cutting-edge puppetry of the 1990 live-action movie.</q>
