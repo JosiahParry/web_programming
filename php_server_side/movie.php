@@ -117,7 +117,7 @@
 						for ($i = 1; $i <= 10; $i++) {
 							$review_full = file("moviefiles/$movie/review{$i}.txt");
 							list($review, $rev_rating, $author, $org) = $review_full;
-							echo "<p>";
+							echo "<p class='reviews-column>'";
 								if ($rev_rating = "ROTTEN"){
 									echo "<img src='hw3-completed/fresh.gif' alt='Rotten' />";
 								} elseif ($rev_rating = "FRESH"){
