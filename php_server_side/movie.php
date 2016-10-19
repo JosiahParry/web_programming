@@ -119,7 +119,7 @@
 								<p><q>$review</q></p>;
 								<p>$author <br />
 								<em>$org</em>
-								</p>;	"
+								</p>;	";
 
 						}
 					?>
