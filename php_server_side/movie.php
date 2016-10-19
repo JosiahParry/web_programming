@@ -40,13 +40,21 @@
 
 					foreach ($overview_items as $key => $data) {
 						$overview_items[$key] = explode(",", $data);
+						$index = 1;
 					}
 
 					foreach ($overview_items as $key => $data) {
 						$overview_items[$key] = explode(":", implode($data));
-
+						$index = 0;
 					}
 
+					foreach ($overview_items as $item){
+						if ($index = 0){
+							echo "<dt>$item</dt>";
+					} else {
+						echo "<dd>$item</dd>";
+					}
+				}
 					print_r($overview_items);
 
 
