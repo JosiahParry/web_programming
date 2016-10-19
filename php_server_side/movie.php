@@ -118,7 +118,7 @@
 							echo "<p>";
 								if ($rev_rating = "ROTTEN"){
 									echo "<img src='hw3-completed/fresh.gif' alt='Rotten' />";
-								} else ($rev_rating = "FRESH"){
+								} elseif ($rev_rating = "FRESH"){
 									echo "<img src='hw3-completed/fresh.gif' alt='FRESH' />";
 								}
 							echo "
