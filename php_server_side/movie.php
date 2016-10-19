@@ -96,10 +96,13 @@
 
 					foreach ($overview_items as $key => $data) {
 						$overview_items[$key] = explode(",", $data);
+
+						$index = 1;
 					}
 
 					foreach ($overview_items as $key => $data) {
 						$overview_items[$key] = explode(":", implode($data));
+						index = 0;
 					}
 
 					print_r($overview_items);
@@ -113,7 +116,7 @@
 
 					<?php
 						$len = count(glob("moviefiles/$movie/review*.txt"));
-						for ($i = 1; ($i <= 10 || floor($len / 2); $i++) {
+						for ($i = 1; $i <= 10; $i++) {
 							$review_full = file("moviefiles/$movie/review{$i}.txt");
 							list($review, $rev_rating, $author, $org) = $review_full;
 							echo "<p>";
