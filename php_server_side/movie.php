@@ -40,17 +40,14 @@
 
 					foreach ($overview_items as $key => $data) {
 						$overview_items[$key] = explode(",", $data);
-						$index = 1;
+				
 					}
 
 					foreach ($overview_items as $key => $data) {
 						$overview_items[$key] = explode(":", implode($data));
-						$index = 0;
+
 					}
 
-					foreach ($overview_items as $item){
-						echo "<p> implode($item) </p>";
-				}
 					print_r($overview_items);
 
 
