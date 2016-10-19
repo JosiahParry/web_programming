@@ -28,7 +28,35 @@
 					<img src=<?php  echo "moviefiles/$movie/overview.png"?>
 							 alt="general overview" />
 				</div>
+				<p>
+					<?php
+					$overview = file("moviefiles/$movie/overview.txt");
+					$overview_items = explode(PHP_EOL, implode($overview));
+					/*print_r(implode($overview_items));
+					print_r(explode(":", $overview_items[0]));
+			*/
+			/*				$var = explode(":", $overview_items);*/
 
+					foreach ($overview_items as $key => $data) {
+						$overview_items[$key] = explode(",", $data);
+					$index = 1;
+
+						foreach ($overview_items as $key => $data) {
+							$overview_items[$key] = explode(":", implode($data));
+							if ($index == 1){
+
+							echo "<dd>$data</dd>"
+
+						}
+					}
+
+
+
+					print_r($overview_items);
+
+
+						?>
+				</p>
 				<dl>
 					<dt>STARRING</dt>
 					<dd>Patrick Stewart <br /> Mako <br /> Sarah Michelle Gellar <br /> Kevin Smith</dd>
@@ -85,29 +113,7 @@
 					<?php echo "$rating%"?>
 				</div>
 
-				<p>
-					<?php
-					$overview = file("moviefiles/$movie/overview.txt");
-					$overview_items = explode(PHP_EOL, implode($overview));
-					/*print_r(implode($overview_items));
-					print_r(explode(":", $overview_items[0]));
-*/
-	/*				$var = explode(":", $overview_items);*/
 
-					foreach ($overview_items as $key => $data) {
-						$overview_items[$key] = explode(",", $data);
-					}
-
-					foreach ($overview_items as $key => $data) {
-						$overview_items[$key] = explode(":", implode($data));
-
-					}
-
-					print_r($overview_items);
-
-
-						?>
-				</p>
 
 				<div class="reviews-column">
 
@@ -116,7 +122,7 @@
 						for ($i = 1; $i <= 10; $i++) {
 							$review_full = file("moviefiles/$movie/review{$i}.txt");
 							list($review, $rev_rating, $author, $org) = $review_full;
-							echo "<p class='reviews-column>'";
+							echo "<p";
 								if ($rev_rating = "ROTTEN"){
 									echo "<img src='hw3-completed/fresh.gif' alt='Rotten' />";
 								} elseif ($rev_rating = "FRESH"){
