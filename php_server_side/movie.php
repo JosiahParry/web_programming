@@ -117,9 +117,9 @@
 							list($review, $rev_rating, $author, $org) = $review_full;
 							echo "<p>";
 								if ($rev_rating = "ROTTEN") {
-									echo "<img src='hw3-completed/rotten.gif'" alt='Rotten'" />"
+									echo "<img src='hw3-completed/rotten.gif'" alt='Rotten'" />";
 								} else ($rev_rating = "FRESH") {
-									echo "<img src='hw3-completed/fresh.gif'" alt='Rotten'" />"
+									echo "<img src='hw3-completed/fresh.gif' alt='Rotten' />";
 								}
 							echo "
 								<q>$review</q></p>
