@@ -112,7 +112,8 @@
 				<div class="reviews-column">
 
 					<?php
-						for ($i = 1; $i <= 10; $i++) {
+						$len = count(glob("moviefiles/$movie/review*.txt"));
+						for ($i = 1; ($i <= 10 || floor($len / 2); $i++) {
 							$review_full = file("moviefiles/$movie/review{$i}.txt");
 							list($review, $rev_rating, $author, $org) = $review_full;
 							echo "<p>";
@@ -127,112 +128,9 @@
 								<em>$org</em>
 								</p>";
 
-						
+
 						}
 					?>
-
-
-					<p>
-						<img src="rotten.gif" alt="Rotten" />
-						<q>Ditching the cheeky, self-aware wink that helped to excuse the concept's inherent corniness, the movie attempts to look polished and 'cool,' but the been-there animation can't compete with the then-cutting-edge puppetry of the 1990 live-action movie.</q>
-					</p>
-					<p>
-						<img src="critic.gif" alt="Critic" />
-						Peter Debruge <br />
-						<em>Variety</em>
-					</p>
-
-					<p>
-						<img src="fresh.gif" alt="Fresh" />
-						<q>TMNT is a fun, action-filled adventure that will satisfy longtime fans and generate a legion of new ones.</q>
-					</p>
-					<p>
-						<img src="critic.gif" alt="Critic" />
-						Todd Gilchrist <br />
-						<em>IGN Movies</em>
-					</p>
-
-					<p>
-						<img src="rotten.gif" alt="Rotten" />
-						<q>It stinks!</q>
-					</p>
-					<p>
-						<img src="critic.gif" alt="Critic" />
-						Jay Sherman (unemployed)
-					</p>
-
-					<p>
-						<img src="rotten.gif" alt="Rotten" />
-						<q>The rubber suits are gone and they've been redone with fancy computer technology, but that hasn't stopped them from becoming dull.</q>
-					</p>
-					<p>
-						<img src="critic.gif" alt="Critic" />
-						Joshua Tyler <br />
-						<em>CinemaBlend.com</em>
-					</p>
-
-					<p>
-						<img src="rotten.gif" alt="Rotten" />
-						<q>The turtles are truly heroes to our youth. They are
-						half-shelled role models</q>
-					</p>
-					<p>
-						<img src="critic.gif" alt="Critic" />
-						Dontaello<br />
-						<em>Inventor Weekly</em>
-					</p>
-				</div>
-
-				<div class="reviews-column">
-					<p>
-						<img src="rotten.gif" alt="Rotten" />
-						<q>The turtles themselves may look prettier, but are no smarter; torn irreparably from their countercultural roots, our superheroes on the half shell have been firmly co-opted by the industry their creators once sought to spoof.</q>
-					</p>
-					<p>
-						<img src="critic.gif" alt="Critic" />
-						Jeannette Catsoulis <br />
-						<em>New York Times</em>
-					</p>
-
-					<p>
-						<img src="rotten.gif" alt="Rotten" />
-						<q>Impersonally animated and arbitrarily plotted, the story appears to have been made up as the filmmakers went along.</q>
-					</p>
-					<p>
-						<img src="critic.gif" alt="Critic" />
-						Ed Gonzalez <br />
-						<em>Slant Magazine</em>
-					</p>
-
-					<p>
-						<img src="fresh.gif" alt="Fresh" />
-						<q>The striking use of image and motion allows each sequence to leave an impression. It's an accomplished restart to this franchise.</q>
-					</p>
-					<p>
-						<img src="critic.gif" alt="Critic" />
-						Mark Palermo <br />
-						<em>Coast (Halifax, Nova Scotia)</em>
-					</p>
-
-					<p>
-						<img src="rotten.gif" alt="Rotten" />
-						<q>The script feels like it was computer generated. This mechanical presentation lacks the cheesy charm of the three live action films.</q>
-					</p>
-					<p>
-						<img src="critic.gif" alt="Critic" />
-						Steve Rhodes <br />
-						<em>Internet Reviews</em>
-					</p>
-
-					<p>
-						<img src="rotten.gif" alt="Rotten" />
-						<q>These turtles are rad dude!</q>
-					</p>
-					<p>
-						<img src="critic.gif" alt="Critic" />
-						Michelangelo <br />
-						<em>Tubular Magazine</em>
-					</p>
 				</div>
 			</div>
 
