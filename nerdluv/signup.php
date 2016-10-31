@@ -1,5 +1,5 @@
 <?php include("top.html"); ?>
-  <form>
+  <form class="matches">
     First name: <input type="text" name="firstname" maxlength="16" size="16"><br>
     Gender: <label>
               <input type="radio" name="gender" value="male">
@@ -24,4 +24,5 @@
     <input type="text" name="maxage" placeholder="max" maxlength="2" size="6">
     <input type="submit" name="submit"/>
   </form>
+
 <? php include("bottom.html"); ?>
