@@ -9,8 +9,8 @@
               <input type="radio" name="gender" value="female">
                 Female
             </label><br>
-    <a href="http://www.humanmetrics.com/cgi-win/JTypes2.asp">
-    Personality types</a>: <input type="text" maxlength="4" size="4"><br>
+    Personality types: <input type="text" maxlength="4" size="4">
+      <a href="http://www.humanmetrics.com/cgi-win/JTypes2.asp">Don't know your type?</a><br>
     Favorite OS:
       <select name="fav_os">
         <option selected="selected">Windows</option>
@@ -18,9 +18,9 @@
         <option>Linux</option>
         <option>Android</option>
         <option>iOS</option>
-      </select>
+      </select><br>
     Seeking age:
-    <input type="text" name="minage" placeholder="min" maxlength="2"> to
-    <input type="text" name="maxage" placeholder="max" maxlength="2">
+    <input type="text" name="minage" placeholder="min" maxlength="2" size="6"> to
+    <input type="text" name="maxage" placeholder="max" maxlength="2" size="6">
   </form>
 <? php include("bottom.html"); ?>
