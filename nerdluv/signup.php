@@ -22,5 +22,6 @@
     Seeking age:
     <input type="text" name="minage" placeholder="min" maxlength="2" size="6"> to
     <input type="text" name="maxage" placeholder="max" maxlength="2" size="6">
+    <input type="submit" name="submit"/>
   </form>
 <? php include("bottom.html"); ?>
