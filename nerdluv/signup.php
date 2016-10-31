@@ -22,9 +22,9 @@
       </select><br>
     Seeking age:
     <input type="text" name="minage" placeholder="min" maxlength="2" size="6"> to
-    <input type="text" name="maxage" placeholder="max" maxlength="2" size="6">
+    <input type="text" name="maxage" placeholder="max" maxlength="2" size="6"><br>
     <input type="submit" name="submit"/>
   </fieldset>
   </form>
 
-<? php include("bottom.html"); ?>
+<?php include("bottom.html"); ?>
