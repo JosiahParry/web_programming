@@ -25,7 +25,7 @@
           </a><br>
         </li>
         <li>
-          Favorite OS:
+          <strong>Favorite OS:</strong>
           <select name="fav_os">
             <datalist>
               <option selected="selected">Windows</option>
