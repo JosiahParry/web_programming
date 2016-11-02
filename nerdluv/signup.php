@@ -1,5 +1,5 @@
 <?php include("top.html"); ?>
-  <form>
+  <form action="signup-submit.php" method="post">
 
     <fieldset>
       <legend>New User Signup:</legend>
@@ -10,14 +10,10 @@
         </li>
         <li>
           <strong>Gender:</strong>
-            <label for="male">
-              <input class="column" id="male" type="radio" name="gender" value="male">
-                Male
-            </label>
-            <label for="female">
-              <input class="column" id="female" type="radio" name="gender" value="female">
-                Female
-            </label><br>
+            <input id="male" type="radio" name="gender" value="male">
+            <label class="column" for="male">Male</label>
+            <label class="column" for="female">Female</label>
+              <input id="female" type="radio" name="gender" value="female"><br>
         </li>
         <li>
           <strong>Personality types:</strong>
