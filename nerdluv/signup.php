@@ -2,13 +2,14 @@
   <form>
 
     <fieldset>
-      <legend>New User Signup</legend>
+      <legend>New User Signup:</legend>
       <ul>
         <li>
-          First name: <input type="text" name="firstname" maxlength="16" size="16"><br>
+          <strong>First name:</strong>
+          <input type="text" name="firstname" maxlength="16" size="16"><br>
         </li>
         <li>
-          Gender:
+          <strong>Gender:</strong>
             <label for="male">
               <input id="male" type="radio" name="gender" value="male">
                 Male
@@ -19,9 +20,10 @@
             </label><br>
         </li>
         <li>
-          Personality types: <input type="text" maxlength="4" size="4">
+          <strong>Personality types:</strong>
+          <input type="text" maxlength="4" size="4">
           <a href="http://www.humanmetrics.com/cgi-win/JTypes2.asp">
-          Don't know your type?
+            Don't know your type?
           </a><br>
         </li>
         <li>
@@ -37,7 +39,7 @@
           </select><br>
         </li>
         <li>
-          Seeking age:
+          <strong>Seeking age:</strong>
             <input type="text" name="minage" placeholder="min" maxlength="2" size="6">
             to
             <input type="text" name="maxage" placeholder="max" maxlength="2" size="6"><br>
