@@ -1,5 +1,6 @@
 <?php include("top.html"); ?>
   <form>
+    <legend>New User Sign-up</legend>
     <fieldset>
     First name: <input type="text" name="firstname" maxlength="16" size="16"><br>
     Gender: <label>
