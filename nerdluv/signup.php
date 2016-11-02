@@ -1,7 +1,8 @@
 <?php include("top.html"); ?>
   <form>
-    <legend>New User Sign-up</legend>
+
     <fieldset>
+        <legend>New User Signup</legend>
     First name: <input type="text" name="firstname" maxlength="16" size="16"><br>
     Gender: <label>
               <input type="radio" name="gender" value="male">
@@ -15,11 +16,13 @@
       <a href="http://www.humanmetrics.com/cgi-win/JTypes2.asp">Don't know your type?</a><br>
     Favorite OS:
       <select name="fav_os">
+        <datalist>
         <option selected="selected">Windows</option>
         <option>OS X</option>
         <option>Linux</option>
         <option>Android</option>
         <option>iOS</option>
+      </datalist>
       </select><br>
     Seeking age:
     <input type="text" name="minage" placeholder="min" maxlength="2" size="6"> to
