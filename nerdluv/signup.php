@@ -3,42 +3,49 @@
 
     <fieldset>
       <legend>New User Signup</legend>
-
-        First name: <input class="column" type="text" name="firstname" maxlength="16" size="16"><br>
-
-    Gender:
-        <label for="male">
-          <input class="column" id="male" type="radio" name="gender" value="male">
-            Male
-        </label>
-        <label for="female">
-          <input class="column" id="female" type="radio" name="gender" value="female">
-            Female
-        </label><br>
-
-
-    Personality types: <input class="column" type="text" maxlength="4" size="4">
-      <a href="http://www.humanmetrics.com/cgi-win/JTypes2.asp">
-        Don't know your type?
-      </a><br>
-
-    Favorite OS:
-      <select class="column" name="fav_os">
-        <datalist>
-        <option selected="selected">Windows</option>
-        <option>OS X</option>
-        <option>Linux</option>
-        <option>Android</option>
-        <option>iOS</option>
-      </datalist>
-    </select><br>
-
-    Seeking age:
-    <input class="column" type="text" name="minage" placeholder="min" maxlength="2" size="6"> to
-    <input class="column" type="text" name="maxage" placeholder="max" maxlength="2" size="6"><br>
-
-    <input class="column" type="submit" name="submit"/>
-
+      <ul>
+        <li>
+          First name: <input type="text" name="firstname" maxlength="16" size="16"><br>
+        </li>
+        <li>
+          Gender:
+            <label for="male">
+              <input id="male" type="radio" name="gender" value="male">
+                Male
+            </label>
+            <label for="female">
+              <input id="female" type="radio" name="gender" value="female">
+                Female
+            </label><br>
+        </li>
+        <li>
+          Personality types: <input type="text" maxlength="4" size="4">
+          <a href="http://www.humanmetrics.com/cgi-win/JTypes2.asp">
+          Don't know your type?
+          </a><br>
+        </li>
+        <li>
+          Favorite OS:
+          <select name="fav_os">
+            <datalist>
+              <option selected="selected">Windows</option>
+              <option>OS X</option>
+              <option>Linux</option>
+              <option>Android</option>
+              <option>iOS</option>
+            </datalist>
+          </select><br>
+        </li>
+        <li>
+          Seeking age:
+            <input type="text" name="minage" placeholder="min" maxlength="2" size="6">
+            to
+            <input type="text" name="maxage" placeholder="max" maxlength="2" size="6"><br>
+        </li>
+        <li>
+          <input type="submit" name="submit"/>
+        </li>
+      </ul>
   </fieldset>
   </form>
 
