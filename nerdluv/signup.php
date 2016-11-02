@@ -11,11 +11,11 @@
         <li>
           <strong>Gender:</strong>
             <label for="male">
-              <input id="male" type="radio" name="gender" value="male">
+              <input class="column" id="male" type="radio" name="gender" value="male">
                 Male
             </label>
             <label for="female">
-              <input id="female" type="radio" name="gender" value="female">
+              <input class="column" id="female" type="radio" name="gender" value="female">
                 Female
             </label><br>
         </li>
