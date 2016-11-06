@@ -10,7 +10,7 @@ $min_age = $_POST["minage"];
 $max_age = $_POST["maxage"];
 
 
-$user_info = array($first_name, $gender, $age, $personality, $os, $min_age, $max_age."\n");
+$user_info = array($name, $gender, $age, $personality, $os, $min_age, $max_age."\n");
 
 print_r($user_info);
 ?>
