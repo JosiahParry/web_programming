@@ -8,6 +8,7 @@
           <strong class="column">First name:</strong>
           <input type="text" name="firstname" maxlength="16" size="16"><br>
         </li>
+
         <li>
           <strong class="column">Gender:</strong>
             <input id="male" type="radio" name="gender" value="male">
@@ -15,15 +16,20 @@
             <label for="female">Female</label>
               <input id="female" type="radio" name="gender" value="female"><br>
         </li>
+
         <li>
-          <strong class="column">
+          <strong class="column">Age</strong>
+          <input id="age" type="text" maxlength="2" size="6">
+        </li>
+
         <li>
           <strong class="column">Personality types:</strong>
-          <input type="text" maxlength="4" size="4" name="personality">
+          <input type="text" maxlength="4" size="6" name="personality">
           <a href="http://www.humanmetrics.com/cgi-win/JTypes2.asp">
             Don't know your type?
           </a><br>
         </li>
+
         <li>
           <strong class="column">Favorite OS:</strong>
           <select name="fav_os">
@@ -36,15 +42,18 @@
             </datalist>
           </select><br>
         </li>
+
         <li>
           <strong class="column">Seeking age:</strong>
             <input type="text" name="minage" placeholder="min" maxlength="2" size="6">
             to
             <input type="text" name="maxage" placeholder="max" maxlength="2" size="6"><br>
         </li>
+
         <li>
           <input type="submit" name="submit"/>
         </li>
+        
       </ul>
   </fieldset>
   </form>
