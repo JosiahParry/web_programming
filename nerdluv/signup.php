@@ -5,8 +5,8 @@
       <legend>New User Signup:</legend>
       <ul>
         <li>
-          <strong class="column">First name:</strong>
-          <input type="text" name="firstname" maxlength="16" size="16"><br>
+          <strong class="column">Name:</strong>
+          <input type="text" name="name" maxlength="16" size="16"><br>
         </li>
 
         <li>
@@ -19,7 +19,7 @@
 
         <li>
           <strong class="column">Age</strong>
-          <input id="age" type="text" maxlength="2" size="6">
+          <input id="age" type="text" maxlength="2" size="6" name="age">
         </li>
 
         <li>
@@ -53,7 +53,7 @@
         <li>
           <input type="submit" name="submit"/>
         </li>
-        
+
       </ul>
   </fieldset>
   </form>
