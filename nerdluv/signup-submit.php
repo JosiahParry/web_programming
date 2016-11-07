@@ -1,5 +1,6 @@
 <?php
 include("top.html");
+$singles = "singles.txt";
 //Get names from signup.htmk
 $name = $_POST["name"];
 $gender = $_POST["gender"];
@@ -12,9 +13,11 @@ $max_age = $_POST["maxage"];
 
 $user_info = array($name, $gender, $age, $personality, $os, $min_age, $max_age."\n");
 
+file_put_contents($singles, $user_info, FILE_APPEND);
+
 print_r($user_info);
 ?>
-//HTML thank you Part
+<!--HTML thank you Part-->
   <h1> Thank you! </h1>
     <p> Welcome to NerdLuv <?= $name ?>!</p>
     <p> Now <a href="matches.php">log in to see your matches! </a></p>
