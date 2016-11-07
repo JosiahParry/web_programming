@@ -11,7 +11,8 @@ $min_age = $_POST["minage"];
 $max_age = $_POST["maxage"];
 
 
-$user_info = array($name',', $gender',', $age',', $personality',', $os',', $min_age',', $max_age."\n");
+$user_temp = array($name, $gender, $age, $personality, $os, $min_age, $max_age."\n");
+$user_info = rtrim(implode(",", $user_temp))
 
 file_put_contents($singles, $user_info, FILE_APPEND);
 
