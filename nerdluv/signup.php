@@ -35,7 +35,7 @@
           <select name="fav_os">
             <datalist>
               <option selected="selected">Windows</option>
-              <option>OS X</option>
+              <option value="Mac OS X">OS X</option>
               <option>Linux</option>
               <option>Android</option>
               <option>iOS</option>
