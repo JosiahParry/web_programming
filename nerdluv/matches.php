@@ -6,10 +6,10 @@
       <ul>
         <li>
           <strong class="column">Name:<strong>
-          <input type=text id="name" name="name" size="16"/> <br>
+          <input type=text id="name" name="name" size="16" maxlength="16"/>
         </li>
         <li>
-          <input type="submit" value="View My Matches!">
+          <br><input type="submit" value="View My Matches!">
         </li>
       <ul>
     </fieldset>
