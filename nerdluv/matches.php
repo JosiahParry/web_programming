@@ -5,8 +5,8 @@
       <legend>Returning User: </legend>
       <ul>
         <li>
-          <strong class="column">Name:<strong>
-          <input type=text id="name" name="name" size="16"/><br>
+          <strong>Name:<strong>
+          <input  class="column" type=text id="name" name="name" size="16"/><br>
           <input type="submit" value="View My Matches!">
         </li>
       <ul>
