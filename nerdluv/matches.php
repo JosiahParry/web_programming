@@ -13,4 +13,5 @@
         </li>
       <ul>
     </fieldset>
+  </form>
 <?php include("bottom.html"); ?>
