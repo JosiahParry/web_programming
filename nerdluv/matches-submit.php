@@ -61,7 +61,14 @@ $matches = array();
 //iterate through every user
 for($i = 0; $i < $length; $i++){
   //make sure that the to person to be matched isn't the user
-  if ($info[$i][0] != $user) {
+  if ($info[$i][0] != $user)
+  $matches[$i] = $info[$i]
+}
+
+var_dump($matches);
+
+
+  /*{
     //find opposite gender
     if ($info[$i][1] != $gender) {
       //make sure the age is within user range
@@ -79,7 +86,7 @@ for($i = 0; $i < $length; $i++){
       }
     }
   }
-}
+}*/
   print_r($to_match);
   print_r($matches);
   var_dump($info[4][1]);
