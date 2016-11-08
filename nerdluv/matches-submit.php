@@ -73,7 +73,7 @@
       }
     }
   }
-    print_r($matches);
+    
 ?>
 
   <h2>Matches for <?= $user?></h2>
