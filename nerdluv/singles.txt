@@ -51,3 +51,5 @@ Vint Cerf,M,67,ISFP,Mac OS X,28,55
 Yukihiro Matsumoto,M,45,ENTP,Mac OS X,10,25
 Zelda,F,59,ESTP,Windows,40,62
 Willian Parry,M,48,INFP,Windows,40,60
+Donald Trump,M,69,ENTJ,Android,10,99
+Hillary Clinton,F,68,INTJ,Mac OS x,55,60
