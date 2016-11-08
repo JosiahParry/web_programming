@@ -32,7 +32,7 @@ include("bottom.html");
   for ($i = 0; $i <= $length; $i++) {
     if($info[$i][0] == $user) {
       $user_index == $i;
-      print_r($user_index;)
+      print_r($user_index);
     }
   }
 
