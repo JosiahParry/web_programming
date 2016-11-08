@@ -22,4 +22,9 @@ include("bottom.html");
   }
   $person = $_GET["name"];
   print_r($person);
+
+  echo "<br>";
+
+  print_r($singles);
+
  ?>
