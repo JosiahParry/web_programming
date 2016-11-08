@@ -27,8 +27,14 @@ include("bottom.html");
   var_dump($info);
 
   //search for user in singles.txt
-  $length = count($info);
-  var_dump($length);
+  $length = count($info) - 1; // count doesn't start at one must use count - 1 for searching index
+  for ($i, $i =< $length, $++) {
+    if($info[$i][0] == $name) {
+      $user_index == $i;
+    } break;
+  }
+
+  var_dump($user_index);
 
 
 
