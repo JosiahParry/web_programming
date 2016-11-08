@@ -2,7 +2,7 @@
 include("top.html");
 $all_singles = file("singles.txt", FILE_IGNORE_NEW_LINES);  //read only access to singles.txt
 //$singles = explode("\n", $all_singles); //creates an array where each one is an individual
-print_r($singles);
+//print_r($singles);
 include("bottom.html");
 ?>
 
@@ -23,6 +23,6 @@ include("bottom.html");
       $test[$key] = explode(",", $singles[$key]);
     }
   }
-  $person = $_GET["name"];
-  print_r($test);
+  //$person = $_GET["name"];
+  var_dump($test);
  ?>
