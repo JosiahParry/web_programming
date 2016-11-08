@@ -22,7 +22,7 @@ include("bottom.html");
     foreach($singles as $key => $info){
       $test[$key] = explode(",", $singles[$key]);
     }
-  print_r($test);
   }
   $person = $_GET["name"];
+  print_r($test);
  ?>
