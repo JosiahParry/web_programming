@@ -53,14 +53,14 @@
 
 
   //Create empty matches array
-  $matches = array();
+  $matches[] = array();
   //iterate through every user
   for($i = 0; $i < $length; $i++){
     //make sure that the to person to be matched isn't the user
     //find opposite gender
     if ($info[$i][1] != $gender) {
       //make sure the age is within user range
-      if ($info[$i][2] >= $min_age && $info[$i][2] <= $max_age) {
+      if (($info[$i][2] >= $min_age) && ($info[$i][2] <= $max_age)) {
         //find matching OS
         if ($info[$i][4] == $os) {
           //find at least one matching personality trait
