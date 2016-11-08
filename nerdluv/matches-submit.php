@@ -86,10 +86,18 @@
           <img src="user.jpg" alt="Potential Match" />
         </p>
         <ul>
-            <li>Gender:</li><?= $matches[$i][1] ?></li>
-            <li>Age:</li><?= $matches[$i][2] ?></li>
-            <li>Personality Type:<li><?= $matches[$i][3] ?>
-            <li>OS:</li><?= $matches[$i][4] ?></li>
+            <li><strong>Gender:</strong>
+                <?= $matches[$i][1] ?>
+            </li>
+            <li><strong>Age:</strong>
+              <?= $matches[$i][2] ?>
+            </li>
+            <li><strong>Personality Type:</strong>
+              <?= $matches[$i][3] ?>
+            </li>
+            <li><strong>OS:<strong>
+              <?= $matches[$i][4] ?>
+            </li>
         </ul>
       </div>
     <?php } ?>
