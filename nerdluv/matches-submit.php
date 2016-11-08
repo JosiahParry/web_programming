@@ -75,6 +75,8 @@ for($i = 0; $i <= $length; $i++){
 }
   print_r($to_match);
   print_r($matches);
+  print_r($info[1][1]);
+  print_r($info[$user_index][1]);
 
 
  ?>
