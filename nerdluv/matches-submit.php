@@ -61,35 +61,30 @@ $matches = array();
 //iterate through every user
 for($i = 0; $i < $length; $i++){
   //make sure that the to person to be matched isn't the user
-  if ($info[$i][0] != $user){
-    if($info[$i][1] != $gender){
-      $matches[$i] = $info[$i];
-    }
-  }
-}
-
-var_dump($matches);
-
-
-  /*{
-    //find opposite gender
-    if ($info[$i][1] != $gender) {
-      //make sure the age is within user range
-      if ($info[$i][2] >= $min_age && $info[$i][2] <= $max_age) {
-        //find matching OS
-        if ($info[$i][4] == $os) {
-          //find at least one matching personality trait
-          for($n = 0; $n <= strlen($p_type) - 1; $n++) {
-            //match the string position user is the haystack, $info is the needle
-            if (strpos($p_type, $info[$i][3][$n])) {
-              $matches[] = $info[$i].'\n';
-            }
+  //find opposite gender
+  if ($info[$i][1] != $gender) {
+    //make sure the age is within user range
+    if ($info[$i][2] >= $min_age && $info[$i][2] <= $max_age) {
+      //find matching OS
+      if ($info[$i][4] == $os) {
+        //find at least one matching personality trait
+        for($n = 0; $n <= strlen($p_type) - 1; $n++) {
+          //match the string position user is the haystack, $info is the needle
+          if (strpos($p_type, $info[$i][3][$n])) {
+            $matches[] = $info[$i].'\n';
           }
         }
       }
     }
   }
-}*/
+}
+
+
+var_dump($matches);
+
+
+  {
+
   print_r($to_match);
   print_r($matches);
   var_dump($info[4][1]);
