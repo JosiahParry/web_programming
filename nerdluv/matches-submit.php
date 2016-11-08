@@ -7,13 +7,6 @@ include("bottom.html");
 ?>
 
 
-0 = Name
-1 = Gender
-2 = Age
-3 = Personality Type
-4 = OS
-5 = Min Age
-6 = Max Age
 
 <?php
   $user = $_GET["name"];
@@ -39,6 +32,8 @@ include("bottom.html");
 
 $to_match = $info[$user_index]; // array of only to be matched
 
+
+// 0 = Name | 1 = Gender | 2 = Age | 3 = Personality Type | 4 = OS | 5 = Min Age | 6 = Max Age
 //logic:
 //gender != $to_match[1]
 //age >= $to_match[5] (narrow to min age older)
@@ -53,9 +48,31 @@ $to_match = $info[$user_index]; // array of only to be matched
       //  }
   //figure out above code in php
 
-
-
-
+//Create empty matches array
+$matches = array();
+//iterate through every user
+for($i = 0; $i <= $length; $i++){
+  //make sure that the to person to be matched isn't the user
+  if ($info[$i][0] != $user) {
+    //find opposite gender
+    if ($info[$i][1] != $to_match[1]) {
+      //make sure the age is within user range
+      if ($info[$i][2] >= $to_match[5] && $info[$i][2] <= $to_match[5]) {
+        //find matching OS
+        if ($info[$i][4] == $to_match[4]) {
+          //find at least one matching personality trait
+          for($n = 0; $n <= strlen($to_match[3]) - 1; $n++){
+            //match the string position user is the haystack, $info is the needle
+            if (strpos($to_match[3], $info[$i][3][$n])) {
+              $matches[] = $info[$i].'\n';
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  print_r($matches);
 
 
  ?>
