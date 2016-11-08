@@ -27,19 +27,33 @@ include("bottom.html");
   print_r($info);
 
   //search for user in singles.txt
+
   $length = count($info) - 1; // count doesn't start at one must use count - 1 for searching index
-  $user_index = 0;//initialize index
+
+  $user_index = 0; //initialize index
   for ($i = 0; $i <= $length; $i++) {
     if(strcmp($info[$i][0], $user) == 0) {
     		$user_index = $i;
     	}
   }
 
-  //if($info[$i][0] == $user) {}
-    //$user_index == $i;
-    print_r($user_index);
+$to_match = $info[$user_index]; // array of only to be matched
 
-  var_dump($user_index);
+//logic:
+//gender != $to_match[1]
+//age >= $to_match[5] (narrow to min age older)
+// age <= $to_match[6] (narrow to younger than max age)
+//OS $to_match[4] == $info[i][4] (creates OS match)
+//personality must be done in separate for loop
+  // check for a match for each letter in the string
+  // for(n in length(personality)) {
+        //  if( grep(personality[n], $info[i][n]) != NULL){
+        //    person is a match
+        //  }
+      //  }
+  //figure out above code in php
+
+
 
 
 
