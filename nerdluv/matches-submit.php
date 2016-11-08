@@ -24,7 +24,7 @@ include("bottom.html");
       $info[] = explode(",", $singles[$key]); //fill an array for each user
     }
   }
-  var_dump($info);
+  print_r($info);
 
   //search for user in singles.txt
   $length = count($info) - 1; // count doesn't start at one must use count - 1 for searching index
@@ -32,6 +32,7 @@ include("bottom.html");
   for ($i = 0; $i <= $length; $i++) {
     if($info[$i][0] == $user) {
       $user_index == $i;
+      print_r($user_index;)
     }
   }
 
