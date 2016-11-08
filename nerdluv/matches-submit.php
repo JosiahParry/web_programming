@@ -59,7 +59,7 @@ print_r($info[$user_index]);
 //Create empty matches array
 $matches = array();
 //iterate through every user
-for($i = 0; $i <= $length; $i++){
+for($i = 0; $i < $length; $i++){
   //make sure that the to person to be matched isn't the user
   if ($info[$i][0] != $user) {
     //find opposite gender
