@@ -47,7 +47,8 @@ $to_match = $info[$user_index]; // array of only to be matched
         //  }
       //  }
   //figure out above code in php
-
+print_r($to_match);
+print_r($info[$user_index]);
 //Create empty matches array
 $matches = array();
 //iterate through every user
