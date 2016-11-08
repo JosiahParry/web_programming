@@ -61,8 +61,9 @@ $matches = array();
 //iterate through every user
 for($i = 0; $i < $length; $i++){
   //make sure that the to person to be matched isn't the user
-  if ($info[$i][0] != $user)
-  $matches[$i] = $info[$i]
+  if ($info[$i][0] != $user){
+  $matches[$i] = $info[$i];
+}
 }
 
 var_dump($matches);
