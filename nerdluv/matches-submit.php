@@ -19,6 +19,11 @@ include("bottom.html");
   $singles = array();
   foreach($all_singles as $key => $ind) {
     $singles = explode("\n", $all_singles[$key]);
+    foreach($singles as $key => $info){
+      $test = explode(",", $singles[$key]);
+      print_r($test);
+
+    }
   print_r($singles);
   }
   $person = $_GET["name"];
