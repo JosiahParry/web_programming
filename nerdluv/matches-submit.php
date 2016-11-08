@@ -71,7 +71,7 @@ for($i = 0; $i < $length; $i++){
         for($n = 0; $n <= strlen($p_type) - 1; $n++) {
           //match the string position user is the haystack, $info is the needle
           if (strpos($p_type, $info[$i][3][$n])) {
-            $matches[] = $info[$i].'\n';
+            $matches[] = $info[$i];
           }
         }
       }
@@ -82,8 +82,6 @@ for($i = 0; $i < $length; $i++){
 
 var_dump($matches);
 
-
-  {
 
   print_r($to_match);
   print_r($matches);
