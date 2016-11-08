@@ -16,15 +16,12 @@ include("bottom.html");
 6 = Max Age
 
 <?php
-  foreach($all_singles as $key => $singles) {
+  $singles = array();
+  foreach($all_singles as $key => $ind) {
     $singles = explode("\n", $all_singles[$key]);
-    echo "<p>"."implode(','$singles)".'<br></p>';
   }
   $person = $_GET["name"];
   print_r($person);
-
-  echo "<br>";
-
   print_r($singles);
 
  ?>
