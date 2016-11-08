@@ -18,7 +18,7 @@ include("bottom.html");
 <?php
   foreach($all_singles as $key => $singles) {
     $all_single[$key] = explode("\n");
-    print_r[$singles]
+    print_r($singles);
   }
 
  ?>
