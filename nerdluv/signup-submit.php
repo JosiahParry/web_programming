@@ -13,7 +13,7 @@ $max_age = $_POST["maxage"];
 
 $user_temp = array($name, $gender, $age, $personality, $os, $min_age, $max_age."\n");
 $user_info = implode(",", $user_temp);
-file_put_contents($singles, $user_info, FILE_APPEND);
+@file_put_contents($singles, $user_info, FILE_APPEND);
 
 ?>
 <!--HTML thank you Part-->
