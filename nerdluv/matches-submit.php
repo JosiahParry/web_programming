@@ -55,15 +55,15 @@ for($i = 0; $i <= $length; $i++){
   //make sure that the to person to be matched isn't the user
   if ($info[$i][0] != $user) {
     //find opposite gender
-    if ($info[$i][1] != $to_match[1]) {
+    if ($info[$i][1] != $info[$user_index][1]) {
       //make sure the age is within user range
-      if ($info[$i][2] >= $to_match[5] && $info[$i][2] <= $to_match[5]) {
+      if ($info[$i][2] >= $info[$user_index][5] && $info[$i][2] <= $info[$user_index][6]) {
         //find matching OS
-        if ($info[$i][4] == $to_match[4]) {
+        if ($info[$i][4] == $info[$user_index][4]) {
           //find at least one matching personality trait
-          for($n = 0; $n <= strlen($to_match[3]) - 1; $n++){
+          for($n = 0; $n <= strlen($info[$user_index][3]) - 1; $n++){
             //match the string position user is the haystack, $info is the needle
-            if (strpos($to_match[3], $info[$i][3][$n])) {
+            if (strpos($info[$user_index][3], $info[$i][3][$n])) {
               $matches[] = $info[$i].'\n';
             }
           }
@@ -72,6 +72,7 @@ for($i = 0; $i <= $length; $i++){
     }
   }
 }
+  print_r($to_match);
   print_r($matches);
 
 
