@@ -25,7 +25,7 @@ include("bottom.html");
     }
   }
   var_dump($info);
-  var_dump($user);
+  var_dump(info[0 == $user]);
 
 
 
