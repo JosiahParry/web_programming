@@ -25,7 +25,10 @@ include("bottom.html");
     }
   }
   var_dump($info);
-  var_dump(info[n][0 == $user]);
+
+  //search for user in singles.txt
+  $length = count($info);
+  var_dump($length);
 
 
 
