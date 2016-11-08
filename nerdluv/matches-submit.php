@@ -18,7 +18,7 @@ include("bottom.html");
 <?php
   foreach($all_singles as $key => $singles) {
     $singles = explode("\n", $all_singles[$key]);
-    print_r($singles);
+    echo "$singles <br>"
   }
   $person = $_GET["name"];
   print_r($person);
