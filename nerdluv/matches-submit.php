@@ -79,6 +79,7 @@
 
   <h2>Matches for <?= $user?></h2>
   <?php
+    print_r($mateches);
     for($i = 0; $i <= count($matches) - 1; $i++){
    ?>
       <div class="match">
