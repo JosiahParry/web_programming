@@ -20,9 +20,9 @@ include("bottom.html");
   foreach($all_singles as $key => $ind) {
     $singles = explode("\n", $all_singles[$key]);
     foreach($singles as $key => $info){
-      $test[] = explode(",", $singles[$key]);
+      $info[] = explode(",", $singles[$key]);
     }
   }
   //$person = $_GET["name"];
-  var_dump($test);
+  var_dump($info);
  ?>
