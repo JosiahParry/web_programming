@@ -95,7 +95,7 @@
             <li><strong>Personality Type:</strong>
               <?= $matches[$i][3] ?>
             </li>
-            <li><strong>OS:<strong>
+            <li><strong>OS:</strong>
               <?= $matches[$i][4] ?>
             </li>
         </ul>
