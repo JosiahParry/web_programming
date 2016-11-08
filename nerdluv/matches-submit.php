@@ -17,7 +17,7 @@ include("bottom.html");
       $info[] = explode(",", $singles[$key]); //fill an array for each user
     }
   }
-  print_r($info);
+  //print_r($info);
 
   //search for user in singles.txt
 
