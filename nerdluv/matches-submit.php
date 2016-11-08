@@ -16,13 +16,17 @@ include("bottom.html");
 6 = Max Age
 
 <?php
+  $user = $_GET["name"];
   $singles = array();
   foreach($all_singles as $key => $ind) {
     $singles = explode("\n", $all_singles[$key]);
     foreach($singles as $key => $keyval){
-      $info[] = explode(",", $singles[$key]);
+      $info[] = explode(",", $singles[$key]); //fill an array for each user
     }
   }
-  //$person = $_GET["name"];
   var_dump($info);
+  var_dump($user);
+
+
+
  ?>
