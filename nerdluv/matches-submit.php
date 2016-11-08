@@ -19,7 +19,7 @@ include("bottom.html");
   $singles = array();
   foreach($all_singles as $key => $ind) {
     $singles = explode("\n", $all_singles[$key]);
-  print_r($singles)
+  print_r($singles);
   }
   $person = $_GET["name"];
  ?>
