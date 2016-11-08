@@ -32,6 +32,13 @@ include("bottom.html");
 
 $to_match = $info[$user_index]; // array of only to be matched
 
+$gender = $to_match[1];
+$age = $to_match[2];
+$p_type = $to_match[3];
+$os = $to_match[4];
+$min_age = $to_match[5];
+$max_age = $to_match[6];
+
 
 // 0 = Name | 1 = Gender | 2 = Age | 3 = Personality Type | 4 = OS | 5 = Min Age | 6 = Max Age
 //logic:
@@ -56,15 +63,15 @@ for($i = 0; $i <= $length; $i++){
   //make sure that the to person to be matched isn't the user
   if ($info[$i][0] != $user) {
     //find opposite gender
-    if ($info[$i][1] != $info[$user_index][1]) {
+    if ($info[$i][1] != $gender) {
       //make sure the age is within user range
-      if ($info[$i][2] >= $info[$user_index][5] && $info[$i][2] <= $info[$user_index][6]) {
+      if ($info[$i][2] >= $min_age && $info[$i][2] <= $max_age) {
         //find matching OS
-        if ($info[$i][4] == $info[$user_index][4]) {
+        if ($info[$i][4] == $os) {
           //find at least one matching personality trait
-          for($n = 0; $n <= strlen($info[$user_index][3]) - 1; $n++){
+          for($n = 0; $n <= strlen($p_type) - 1; $n++) {
             //match the string position user is the haystack, $info is the needle
-            if (strpos($info[$user_index][3], $info[$i][3][$n])) {
+            if (strpos($p_type, $info[$i][3][$n])) {
               $matches[] = $info[$i].'\n';
             }
           }
