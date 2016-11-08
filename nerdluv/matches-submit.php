@@ -68,6 +68,7 @@
             //match the string position user is the haystack, $info is the needle
             if (strpos($p_type, $info[$i][3][$n])) {
               array_push($matches, $info[$i]);
+              break;
             }
           }
         }
