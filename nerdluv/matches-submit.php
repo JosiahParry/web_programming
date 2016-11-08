@@ -49,8 +49,9 @@
           //  }
         //  }
     //figure out above code in php
-  print_r($to_match);
-  print_r($info[$user_index]);
+
+
+
   //Create empty matches array
   $matches = array();
   //iterate through every user
@@ -73,7 +74,7 @@
       }
     }
   }
-    
+
 ?>
 
   <h2>Matches for <?= $user?></h2>
