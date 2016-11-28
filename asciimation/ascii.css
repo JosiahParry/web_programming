@@ -1,0 +1,59 @@
+/* using wildcard to set all fonts to sans-serif */
+* {
+  font-family: sans-serif;
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+#title {
+  font-size: 32pt;
+  font-weight: bold;
+  text-align: center;
+}
+
+#viewer {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 400px;
+    position: relative;
+}
+
+#control_area {
+  width: 90%;
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+legend {
+  text-align: left;
+}
+
+fieldset {
+  text-align: center;
+}
+
+ul li {
+  list-style-type: none;
+  text-align: center;
+
+}
+
+body {
+  background-color: #CCCCFF;
+}
+
+.controls {
+  border: 5px solid black;
+  float: left;
+  margin: 5px;
+
+}
+
+#w3c {
+  float:right;
+}
